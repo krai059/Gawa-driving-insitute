@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gawa Institute</title>
+  
+    <link rel="stylesheet" href="styles.css">
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+          <img src="images/logo.jpg">
+        </div>
+        <div class="menu">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <a href="Index.html">Home</a>
+            <a href="About.html">About Us</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="service.html">Service</a>
+            <a href="schedule.html">Schedule</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="fees.html">Fees</a>
+            <!-- Dropdown for Forms -->
+ <div class="dropdown">
+    <a href="#" onclick="toggleDropdown(event)">Forms <i class="fa fa-caret-down"></i></a>
+    <div class="dropdown-content" id="dropdownMenu">
+        <a href="admission-form.html">Admission Form</a>
+        <a href="exam-form.html">Exam Form</a>
+        <a href="feedback-form.html">Feedback Form</a>
+    </div>
+</div>
+            <a href="login.html">Admin</a>
+        </div>
+        <div class="reg">
+            <a href="registration.html">Register</a>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <section class="h-txt">
+        <span>Enjoy</span>
+        <h1>Gawa Institute</h1>
+        <br>
+        <a href="registration.html" title="Book Your Turn">Book Your Turn</a>
+    </section>
+</header>
+<div class="main-content">
+    welcome to page
+</div>
+<!--footer-->
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 Gawa Institute. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#" aria-label="Facebook" class="fa fa-facebook"></a>
+            <a href="#" aria-label="Twitter" class="fa fa-twitter"></a>
+            <a href="#" aria-label="Instagram" class="fa fa-instagram"></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function showMenu() {
+        document.querySelector('.menu').style.right = '0'; // Show the menu
+    }
+    function hideMenu() {
+        document.querySelector('.menu').style.right = '-100%'; // Hide the menu off-screen
+    }
+</script>
+<script>
+    function toggleDropdown(event) {
+        event.preventDefault();
+        let dropdownMenu = document.getElementById("dropdownMenu");
+
+        // Toggle visibility
+        dropdownMenu.classList.toggle("show");
+
+        // Close dropdown if clicked outside
+        document.addEventListener("click", function (e) {
+            if (!event.target.closest(".dropdown")) {
+                dropdownMenu.classList.remove("show");
+            }
+        }, { once: true });
+    }
+</script>
+
+</body>
+</html>
